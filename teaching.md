@@ -9,7 +9,7 @@ Technology Strategy, Strategic Management
 
 # Course Tought
 - Tulane University
-  - Management of Technology and Innovation (Undergraduate)
+      + Management of Technology and Innovation (Undergraduate)
 - University of Colorado Boulder
-  - Strategic Management (Undergraduate)
+      + Strategic Management (Undergraduate)
 
