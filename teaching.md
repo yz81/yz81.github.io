@@ -5,7 +5,8 @@ permalink: /teaching/
 ---
 
 # Teaching Interest
-Technology Strategy, Strategic Management
+- Technology Strategy
+- Strategic Management
 
 # Course Tought
 - Management of Technology and Innovation (Tulane University, Undergraduate)
