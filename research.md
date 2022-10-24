@@ -9,7 +9,8 @@ My research generally covers innovation, strategy, and entrepreneurship. Specifi
 1. Digitization and Innovation 
 2. Innovation and Patenting 
 3. Innovation in China  
-
+  
+  
 In general, I study the intersection between strategy and innovation at different levels (regions, firm, project, individual, and patent). I use econometric methods combined with computational techniques to study the antecedents, processes, and implications of organizations’ strategic decisions by drawing from theories of knowledge and innovation.
 
 # Keywords 
