@@ -13,7 +13,7 @@ In general, I study the intersection between strategy and innovation at differen
 
 
 # Keywords 
-knowledge and innovation, digitization, (big) data-driven business.
+Knowledge and Technological Innovation, Digitization, Data-driven Business
 
 # Refereed Publications
 Cheng, S.F., P. Lin, Y. Tan, and Y. Zhang (Equal Contribution and Alphabetical Order). (Forthcoming) “High” Innovators? Marijuana Legalization and Regional Innovation. Production and Operations Management. 
