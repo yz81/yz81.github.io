@@ -11,7 +11,9 @@ My research generally covers innovation, strategy, and entrepreneurship. Specifi
 3. Innovation in China
 In general, I study the intersection between strategy and innovation at different levels (regions, firm, project, individual, and patent). I use econometric methods combined with computational techniques to study the antecedents, processes, and implications of organizations’ strategic decisions by drawing from theories of knowledge and innovation.
 
-**Keywords**: knowledge and innovation, digitization, (big) data-driven business.
+
+# Keywords 
+knowledge and innovation, digitization, (big) data-driven business.
 
 # Refereed Publications
 Cheng, S.F., P. Lin, Y. Tan, and Y. Zhang (Equal Contribution and Alphabetical Order). (Forthcoming) “High” Innovators? Marijuana Legalization and Regional Innovation. Production and Operations Management. 
