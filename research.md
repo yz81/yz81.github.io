@@ -5,13 +5,12 @@ permalink: /research/
 ---
 
 # Research Summary
-My research generally covers innovation, strategy, and entrepreneurship. Specifically, my research is focused on three interrelated themes: 
+My research focuses on the intersection between strategy and innovation at various levels (regions, firm, project, individual, and patent). I use econometric methods combined with computational techniques to study the antecedents, processes, and implications of organizations’ strategic decisions by drawing from theories of knowledge and innovation.  
+
+Specifically, my research has three interrelated themes: 
 1. Digitization and Innovation 
 2. Innovation and Patenting 
-3. Innovation in China  
-  
-  
-In general, I study the intersection between strategy and innovation at different levels (regions, firm, project, individual, and patent). I use econometric methods combined with computational techniques to study the antecedents, processes, and implications of organizations’ strategic decisions by drawing from theories of knowledge and innovation.
+3. Innovation in China 
 
 # Keywords 
 Knowledge and Technological Innovation, Digitization, Data-driven Business
