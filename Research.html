@@ -13,10 +13,10 @@
 
 <title>Research</title>
 
-<script src="site_libs/header-attrs-2.10/header-attrs.js"></script>
-<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<script src="site_libs/header-attrs-2.17/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<link href="site_libs/bootstrap-3.3.5/css/cerulean.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
@@ -30,8 +30,10 @@
        code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
        pre:not([class]) { background-color: white }</style>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -58,6 +60,8 @@ if (window.hljs) {
 
 
 
+<link rel="stylesheet" href="styles.css" type="text/css" />
+
 
 
 <style type = "text/css">
@@ -81,12 +85,89 @@ button.code-folding-btn:focus {
 summary {
   display: list-item;
 }
+details > summary > p:only-child {
+  display: inline;
+}
 pre code {
   padding: 0;
 }
 </style>
 
 
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
 
 <!-- tabsets -->
 
@@ -100,8 +181,8 @@ pre code {
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -109,16 +190,9 @@ pre code {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
+  content: "\e258";
   font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
+  border: none;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -159,6 +233,42 @@ pre code {
 
 
 
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Yuchen's Garage</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">
+    <span class="fa fa-home"></span>
+     
+    Home
+  </a>
+</li>
+<li>
+  <a href="Research.html">Research</a>
+</li>
+<li>
+  <a href="Teaching.html">Teaching</a>
+</li>
+<li>
+  <a href="Data.html">Data</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
 <div id="header">
 
 
@@ -168,43 +278,69 @@ pre code {
 </div>
 
 
-<pre><code># Research Summary
-My research focuses on the intersection between strategy and innovation at various levels (regions, firm, project, individual, and patent). I use econometric methods combined with computational techniques to study the antecedents, processes, and implications of organizations’ strategic decisions by drawing from theories of knowledge and innovation.  
-
-Specifically, my research has three interrelated themes: 
-1. Digitization and Innovation 
-2. Innovation and Patenting 
-3. Innovation in China 
-
-# Keywords 
-Knowledge and Technological Innovation, Digitization, Data-driven Business
-
-# Refereed Publications
-Cheng, S.F., P. Lin, Y. Tan, and Y. Zhang (Equal Contribution and Alphabetical Order). (Forthcoming) “High” Innovators? Marijuana Legalization and Regional Innovation. Production and Operations Management. 
-
-Zhang, Y., and W. Yang. (Forthcoming) Breakthrough Invention and Problem Complexity: Evidence from a Quasi-Experiment. Strategic Management Journal. 
-
-Zhang, Y., J. Li, and T. Tong. (2022) How Platform Gatekeeping Affects Knowledge Sharing among Complementors. Strategic Management Journal, 43(3), 599-626.
-
-Zhang, Y., and T. Tong. (2021) Vertical integration and rm innovation: Quasi-experimental evidence. Organization Science, 32(2), 455-479.
-[An earlier version won the 2014 Robert J. Litschert Best Paper by Doctoral Students Award, BPS Division, AOM]
-
-Zhong, W., Z. Ma, T. Tong, Y. Zhang, and L. Xie. (2021) Customer Concentration, Executive Attention, and Firm Search Behavior. Academy of Management Journal, 64(5), 1625-1647.
-
-Tong, T., Z. He, Y. Zhang, and W. He. (2018) A Database Linking Chinese Patents to China&#39;s Census Firms. Scientific Data, 5(1), 1-16.
-
-Tong, T., K. Zhang, Z. He, and Y. Zhang. (2018) What determines the duration of patent examination in China? Evidence from the population of invention patent applications at the SIPO. Research Policy, 47(3), 583-591.
-
-He, Z., T. Tong, Y. Zhang, and W. He. (2018) Constructing a Chinese patent database of listed firms in China: Descriptions, lessons, and insights. Journal of Economics and Management Strategy, 27(3), 579-606.
-
-# Working Papers and Work-in-progress
-Han, N., Y. Zhang, and T. Tong. Appropriability Risk and Knowledge Search. (Under review at Research Policy)
-
-Zhong, W., X. Yi, Z. Ma, and Y. Zhang. Female-inclusive TMT and Firm Innovation. (Under the 1st round revise and resubmit at Strategic Management Journal)
-
-Zhang, Y., H. Jiang, and J. Jiao. Technical Information Disclosure in Crowdfunding Project Descriptions. (Under the 2nd round revise and resubmit at Entrepreneurship Theory &amp; Practice)</code></pre>
+<div id="research-summary" class="section level3">
+<h3>Research Summary</h3>
+<p>My research focuses on the intersection between strategy and
+innovation at various levels (regions, firm, project, individual, and
+patent). I use econometric methods combined with computational
+techniques to study the antecedents, processes, and implications of
+organizations’ strategic decisions by drawing from theories of knowledge
+and innovation.</p>
+<p>Specifically, my research has three interrelated themes:</p>
+<ol style="list-style-type: decimal">
+<li>Digitization and Innovation</li>
+<li>Innovation and Patenting</li>
+<li>Innovation in China</li>
+</ol>
+</div>
+<div id="keywords" class="section level3">
+<h3>Keywords</h3>
+<pre><code>Knowledge and Technological Innovation, Digitization, Data-driven Business</code></pre>
+</div>
+<div id="refereed-publications" class="section level3">
+<h3>Refereed Publications</h3>
+<p>Cheng, S.F., P. Lin, Y. Tan, and Y. Zhang (Equal Contribution and
+Alphabetical Order). (Forthcoming) “High” Innovators? Marijuana
+Legalization and Regional Innovation. Production and Operations
+Management.</p>
+<p>Zhang, Y., and W. Yang. (Forthcoming) Breakthrough Invention and
+Problem Complexity: Evidence from a Quasi-Experiment. Strategic
+Management Journal.</p>
+<p>Zhang, Y., J. Li, and T. Tong. (2022) How Platform Gatekeeping
+Affects Knowledge Sharing among Complementors. Strategic Management
+Journal, 43(3), 599-626.</p>
+<p>Zhang, Y., and T. Tong. (2021) Vertical integration and rm
+innovation: Quasi-experimental evidence. Organization Science, 32(2),
+455-479. [An earlier version won the 2014 Robert J. Litschert Best Paper
+by Doctoral Students Award, BPS Division, AOM]</p>
+<p>Zhong, W., Z. Ma, T. Tong, Y. Zhang, and L. Xie. (2021) Customer
+Concentration, Executive Attention, and Firm Search Behavior. Academy of
+Management Journal, 64(5), 1625-1647.</p>
+<p>Tong, T., Z. He, Y. Zhang, and W. He. (2018) A Database Linking
+Chinese Patents to China’s Census Firms. Scientific Data, 5(1),
+1-16.</p>
+<p>Tong, T., K. Zhang, Z. He, and Y. Zhang. (2018) What determines the
+duration of patent examination in China? Evidence from the population of
+invention patent applications at the SIPO. Research Policy, 47(3),
+583-591.</p>
+<p>He, Z., T. Tong, Y. Zhang, and W. He. (2018) Constructing a Chinese
+patent database of listed firms in China: Descriptions, lessons, and
+insights. Journal of Economics and Management Strategy, 27(3),
+579-606.</p>
+</div>
+<div id="working-papers-and-work-in-progress" class="section level3">
+<h3>Working Papers and Work-in-progress</h3>
+<p>Han, N., Y. Zhang, and T. Tong. Appropriability Risk and Knowledge
+Search. (Under review at Research Policy)</p>
+<p>Zhong, W., X. Yi, Z. Ma, and Y. Zhang. Female-inclusive TMT and Firm
+Innovation. (Under the 1st round revise and resubmit at Strategic
+Management Journal)</p>
+<p>Zhang, Y., H. Jiang, and J. Jiao. Technical Information Disclosure in
+Crowdfunding Project Descriptions. (Under the 2nd round revise and
+resubmit at Entrepreneurship Theory &amp; Practice)</p>
 <p><br />
 </p>
+</div>
 
 
 
