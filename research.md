@@ -40,3 +40,5 @@ Zhong, W., X. Yi, Z. Ma, and Y. Zhang. Female-inclusive TMT and Firm Innovation.
 
 Zhang, Y., H. Jiang, and J. Jiao. Technical Information Disclosure in Crowdfunding Project Descriptions. (Under the 2nd round revise and resubmit at Entrepreneurship Theory & Practice)
 
+Zhang, Y and Brian Wu. Task-relevant Data for Management: Evidence from Agriculture. (Preparing for submission)
+
